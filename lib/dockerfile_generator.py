@@ -130,29 +130,38 @@ class DockerfileGenerator:
         commands.append("menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts")
         commands.append("menuselect/menuselect --enable BETTER_BACKTRACES menuselect.makeopts")
 
-        # Disable sound/music categories
-        # commands.append("menuselect/menuselect --disable-category MENUSELECT_CORE_SOUNDS menuselect.makeopts")
-        # commands.append("menuselect/menuselect --disable-category MENUSELECT_MOH menuselect.makeopts")
-        # commands.append("menuselect/menuselect --disable-category MENUSELECT_EXTRA_SOUNDS menuselect.makeopts")
+        # Explicit menuselect options
+        for opt in menuselect_config.get("options", []):
+            commands.append(f"menuselect/menuselect --enable {opt} menuselect.makeopts")
 
-        # Enable applications (support both 'apps' and 'enable_apps' keys)
-        for app in menuselect_config.get('apps', menuselect_config.get('enable_apps', [])):
+        # Explicit category enables
+        enable_categories = menuselect_config.get("enable_categories", [])
+        for cat in enable_categories:
+            commands.append(f"menuselect/menuselect --enable-category {cat} menuselect.makeopts")
+
+        # Default sound-category disable only when not explicitly enabled
+        default_disabled_categories = [
+            "MENUSELECT_CORE_SOUNDS",
+            "MENUSELECT_MOH",
+            "MENUSELECT_EXTRA_SOUNDS",
+        ]
+        for cat in default_disabled_categories:
+            if cat not in enable_categories:
+                commands.append(f"menuselect/menuselect --disable-category {cat} menuselect.makeopts")
+
+        for app in menuselect_config.get("apps", menuselect_config.get("enable_apps", [])):
             commands.append(f"menuselect/menuselect --enable {app} menuselect.makeopts")
 
-        # Enable channels (support both 'channels' and 'enable_channels' keys)
-        for chan in menuselect_config.get('channels', menuselect_config.get('enable_channels', [])):
+        for chan in menuselect_config.get("channels", menuselect_config.get("enable_channels", [])):
             commands.append(f"menuselect/menuselect --enable {chan} menuselect.makeopts")
 
-        # Enable resources/drivers (support both 'drivers' and 'enable_resources' keys)
-        for res in menuselect_config.get('drivers', menuselect_config.get('enable_resources', [])):
+        for res in menuselect_config.get("drivers", menuselect_config.get("enable_resources", [])):
             commands.append(f"menuselect/menuselect --enable {res} menuselect.makeopts")
 
-        # Disable specified modules
-        for mod in menuselect_config.get('disable_modules', []):
+        for mod in menuselect_config.get("disable_modules", []):
             commands.append(f"menuselect/menuselect --disable {mod} menuselect.makeopts")
 
-        # Handle exclude list (from old format)
-        for mod in menuselect_config.get('exclude', []):
+        for mod in menuselect_config.get("exclude", []):
             commands.append(f"menuselect/menuselect --disable {mod} menuselect.makeopts")
 
         return commands
@@ -256,9 +265,11 @@ class DockerfileGenerator:
 
             # Get configure options from config
             configure_options = asterisk_config.get("menuselect", {}).get("configure_options", [])
+            # if asterisk_config.get("configure", {}).get("options"):
+            #     configure_options = asterisk_config["configure"]["options"]
+            configure_options = asterisk_config.get("configure_options", [])
             if asterisk_config.get("configure", {}).get("options"):
                 configure_options = asterisk_config["configure"]["options"]
-
             # Determine build characteristics from version
             if version == 'git' or version.startswith('git-'):
                 # Git versions are always modern (latest)
