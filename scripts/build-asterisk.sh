@@ -438,8 +438,6 @@ log INFO "Parsing build matrix from $LATEST_BUILDS_FILE..."
 # Export verbose flag for Python scripts
 export VERBOSE="$VERBOSE"
 
-log DEBUG "VERBOSE: $VERBOSE"
-
 # Handle git builds with special matrix
 if [[ "$GIT_BUILD" == true ]]; then
     log INFO "Creating git build matrix..."
@@ -450,7 +448,6 @@ else
     # Get build matrix and capture it properly
     {
         exec 3< <(get_build_matrix "$VERSION" "$OS_FILTER" "$ARCH_FILTER" 2>&1)
-        log DEBUG "Raw build matrix output:" >&2
         BUILD_TARGETS=()
         while IFS= read -r line <&3; do
             # Only capture lines that look like build targets (contain colons)
@@ -464,7 +461,6 @@ else
 fi
 
 if [[ ${#BUILD_TARGETS[@]} -eq 0 ]]; then
-    log ERROR "All build targets: ${BUILD_TARGETS[@]}"
     log ERROR "No build targets found"
     exit 1
 fi
