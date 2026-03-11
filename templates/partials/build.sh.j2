@@ -31,7 +31,7 @@ JOBS=${JOBS:-8}
 log "Using $JOBS parallel jobs for compilation (detected $NPROC CPUs)"
 
 # Configure Asterisk
-log "Configuring Asterisk with options...1"
+log "Configuring Asterisk with optionss..."
 {% if configure_options -%}
 ./configure {{ configure_options | join(' ') }}
 {% else -%}
