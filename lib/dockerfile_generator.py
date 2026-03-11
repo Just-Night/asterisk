@@ -131,9 +131,9 @@ class DockerfileGenerator:
         commands.append("menuselect/menuselect --enable BETTER_BACKTRACES menuselect.makeopts")
 
         # Disable sound/music categories
-        commands.append("menuselect/menuselect --disable-category MENUSELECT_CORE_SOUNDS menuselect.makeopts")
-        commands.append("menuselect/menuselect --disable-category MENUSELECT_MOH menuselect.makeopts")
-        commands.append("menuselect/menuselect --disable-category MENUSELECT_EXTRA_SOUNDS menuselect.makeopts")
+        # commands.append("menuselect/menuselect --disable-category MENUSELECT_CORE_SOUNDS menuselect.makeopts")
+        # commands.append("menuselect/menuselect --disable-category MENUSELECT_MOH menuselect.makeopts")
+        # commands.append("menuselect/menuselect --disable-category MENUSELECT_EXTRA_SOUNDS menuselect.makeopts")
 
         # Enable applications (support both 'apps' and 'enable_apps' keys)
         for app in menuselect_config.get('apps', menuselect_config.get('enable_apps', [])):
