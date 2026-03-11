@@ -35,7 +35,7 @@ log "Configuring Asterisk with optionss..."
 {% if configure_options -%}
 ./configure {{ configure_options | join(' ') }}
 {% else -%}
-./configure --with-pjproject-bundled --with-ssl=ssl --with-crypto
+./configure --with-pjproject-bundled --with-ssl=ssl --with-crypto --enable-dev-mode
 {% endif %}
 
 # Build menuselect tool
@@ -56,6 +56,7 @@ menuselect/menuselect --enable BETTER_BACKTRACES menuselect.makeopts
 menuselect/menuselect --enable MENUSELECT_CORE_SOUNDS menuselect.makeopts
 menuselect/menuselect --enable MENUSELECT_MOH menuselect.makeopts
 menuselect/menuselect --enable MENUSELECT_EXTRA_SOUNDS menuselect.makeopts
+menuselect/menuselect --enable TEST_FRAMEWORK menuselect.makeopts
 
 # Enable core applications
 {% for cmd in menuselect_commands -%}
