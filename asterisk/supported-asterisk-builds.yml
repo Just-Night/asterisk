@@ -211,13 +211,13 @@ latest_builds:
   #         - "amd64"
   #         - "arm64"
 
-  # - version: "20.18.0"
-  #   os_matrix:
-  #     - os: "debian"
-  #       distribution: "trixie"
-  #       architectures:
-  #         - "amd64"
-  #         - "arm64"
+  - version: "20.18.0"
+    os_matrix:
+      - os: "debian"
+        distribution: "trixie"
+        architectures:
+          - "amd64"
+          - "arm64"
 
   # - version: "22.8.0"
   #   os_matrix:
