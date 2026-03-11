@@ -269,7 +269,7 @@ docker:
   - /var/log/asterisk
   - /etc/asterisk
 features:
-  hep: false
+  hep: true
   pjsip: true
   recordings: true
   tls: true
