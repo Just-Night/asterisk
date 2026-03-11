@@ -41,7 +41,7 @@ cd /usr/src/asterisk
 {% set is_very_old = (major_version == 1 and minor_version < 4) -%}
 {% if not is_very_old -%}
 log "Configuring Asterisk modules with minimal approach..."
-
+log "1. Building menuselect tool..."
 # Disable sound categories to reduce image size
 menuselect/menuselect --disable-category MENUSELECT_CORE_SOUNDS menuselect.makeopts
 menuselect/menuselect --disable-category MENUSELECT_MOH menuselect.makeopts

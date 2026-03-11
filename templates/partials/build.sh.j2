@@ -44,9 +44,18 @@ make menuselect
 
 # Configure Asterisk modules using menuselect
 log "Configuring Asterisk modules..."
-
+log "3"
 {% if menuselect_commands -%}
 # Disable BUILD_NATIVE optimization for container builds
+menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts
+
+# Enable better backtraces for debugging
+menuselect/menuselect --enable BETTER_BACKTRACES menuselect.makeopts
+
+# Disable sound packages to reduce image size
+menuselect/menuselect --disable-category MENUSELECT_CORE_SOUNDS menuselect.makeopts
+menuselect/menuselect --disable-category MENUSELECT_MOH menuselect.makeopts
+menuselect/menuselect --disable-category MENUSELECT_EXTRA_SOUNDS menuselect.makeopts
 
 # Enable core applications
 {% for cmd in menuselect_commands -%}
