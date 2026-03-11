@@ -461,7 +461,7 @@ else
 fi
 
 if [[ ${#BUILD_TARGETS[@]} -eq 0 ]]; then
-    log ERROR "$BUILD_TARGETS"
+    log ERROR "ll $BUILD_TARGETS"
     log ERROR "No build targets found"
     exit 1
 fi
