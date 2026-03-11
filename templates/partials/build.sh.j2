@@ -31,7 +31,7 @@ JOBS=${JOBS:-8}
 log "Using $JOBS parallel jobs for compilation (detected $NPROC CPUs)"
 
 # Configure Asterisk
-log "Configuring Asterisk with options..."
+log "Configuring Asterisk with options...1"
 {% if configure_options -%}
 ./configure {{ configure_options | join(' ') }}
 {% else -%}
@@ -43,8 +43,8 @@ log "Building menuselect tool..."
 make menuselect
 
 # Configure Asterisk modules using menuselect
-log "Configuring Asterisk modules...1"
-log "3"
+log "Configuring Asterisk modules..."
+
 {% if menuselect_commands -%}
 # Disable BUILD_NATIVE optimization for container builds
 menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts
