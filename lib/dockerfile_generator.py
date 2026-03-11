@@ -253,7 +253,7 @@ class DockerfileGenerator:
             # Generate menuselect commands
             # Priority: Use YAML menuselect config if available, otherwise generate from features
             yaml_menuselect = asterisk_config.get("menuselect", {})
-            if yaml_menuselect and any(yaml_menuselect.get(k) for k in ['apps', 'channels', 'drivers', 'enable_apps', 'enable_channels', 'enable_resources']):
+            if yaml_menuselect and any(yaml_menuselect.get(k) for k in ['apps', 'channels', 'options', 'enable_categories', 'drivers', 'enable_apps', 'enable_channels', 'enable_resources']):
                 # Use YAML-based menuselect configuration
                 menuselect_commands = self._convert_yaml_menuselect_to_commands(yaml_menuselect)
                 menuselect_config = None  # Not needed when using YAML directly

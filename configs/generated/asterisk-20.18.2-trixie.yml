@@ -2,10 +2,10 @@ asterisk:
   addons:
     version: null
   configure_options:
-  - --with-pjproject-bundled
-  - --with-ssl=ssl
-  - --with-crypto
-  - --enable-dev-mode
+    - --with-pjproject-bundled
+    - --with-ssl=ssl
+    - --with-crypto
+    - --enable-dev-mode
   menuselect:
     options:
       - TEST_FRAMEWORK
