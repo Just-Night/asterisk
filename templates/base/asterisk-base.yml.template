@@ -25,6 +25,7 @@ asterisk:
       - chan_iax2
       - chan_local
       - chan_bridge_media
+      - chan_rtp
     apps:
       - app_voicemail
       - app_queue
