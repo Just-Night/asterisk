@@ -7,12 +7,6 @@ asterisk:
     - --with-crypto
     - --enable-dev-mode
   menuselect:
-    options:
-      - TEST_FRAMEWORK
-    enable_categories:
-      - MENUSELECT_CORE_SOUNDS
-      - MENUSELECT_MOH
-      - MENUSELECT_EXTRA_SOUNDS
     apps:
     - app_voicemail
     - app_queue

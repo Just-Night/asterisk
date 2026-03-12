@@ -53,9 +53,9 @@ menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts
 menuselect/menuselect --enable BETTER_BACKTRACES menuselect.makeopts
 
 # Disable sound packages to reduce image size
-menuselect/menuselect --enable MENUSELECT_CORE_SOUNDS menuselect.makeopts
-menuselect/menuselect --enable MENUSELECT_MOH menuselect.makeopts
-menuselect/menuselect --enable MENUSELECT_EXTRA_SOUNDS menuselect.makeopts
+menuselect/menuselect --enable-category MENUSELECT_CORE_SOUNDS menuselect.makeopts
+menuselect/menuselect --enable-category MENUSELECT_MOH menuselect.makeopts
+menuselect/menuselect --enable-category MENUSELECT_EXTRA_SOUNDS menuselect.makeopts
 menuselect/menuselect --enable TEST_FRAMEWORK menuselect.makeopts
 
 # Enable core applications
