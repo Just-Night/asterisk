@@ -54,7 +54,7 @@ asterisk:
     - --with-pjproject-bundled
     - --with-ssl=ssl
     - --with-crypto
-
+    - --enable-dev-mode
   # Source URL will be resolved based on version type (standard vs certified)
 
 docker:
