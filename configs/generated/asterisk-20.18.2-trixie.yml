@@ -262,6 +262,7 @@ docker:
   - /var/spool/asterisk
   - /var/log/asterisk
   - /etc/asterisk
+  - /usr/share/asterisk/moh/
 features:
   hep: true
   pjsip: true
