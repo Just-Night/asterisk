@@ -13,5 +13,5 @@ services:
       - asterisk_logs:/var/log/asterisk
       # - ./asterisk/keys:/etc/asterisk/keys:ro
       # - ./asterisk/config/modules:/etc/asterisk/modules:ro
-    env_file: .env
+    # env_file: .env
     restart: unless-stopped
