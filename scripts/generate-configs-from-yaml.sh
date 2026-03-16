@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Generate config files for Asterisk versions from supported-asterisk-builds.yml
 # This script provides batch config generation that can be reused by both local builds and CI/CD

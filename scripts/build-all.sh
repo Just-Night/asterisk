@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Build all supported Asterisk versions and push to Docker Hub
 # Processes all buildable versions from asterisk/supported-asterisk-builds.yml

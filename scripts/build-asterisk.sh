@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Build Asterisk Docker images with OS/architecture matrix support
 # Integrates with the YAML-based configuration system

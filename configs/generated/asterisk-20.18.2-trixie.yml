@@ -261,8 +261,8 @@ docker:
   - /var/lib/asterisk/phoneprov
   - /var/spool/asterisk
   - /var/log/asterisk
-  - /etc/asterisk
   - /usr/share/asterisk/moh/
+  - /etc/asterisk
 features:
   hep: true
   pjsip: true
@@ -309,7 +309,6 @@ packages:
   - uuid-dev
   - xmlstarlet
   - libsrtp2-dev
-  - libjwt-dev
   runtime:
   - binutils
   - curl
@@ -339,5 +338,4 @@ packages:
   - libncurses6
   - libpqxx-7.10
   - libicu76
-  - libjwt2
 version: 20.18.2

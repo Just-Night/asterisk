@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Regenerate all configs from templates for every supported version
 # This script loops through all versions in supported-asterisk-builds.yml

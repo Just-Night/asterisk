@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Test Build Script for Asterisk Docker Images
 # Validates all supported Asterisk versions locally (AMD64 only, no push)

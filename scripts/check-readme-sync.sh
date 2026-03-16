@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Check if README.md is in sync with supported-asterisk-builds.yml
 # Runs update-readme-versions.py and checks for differences

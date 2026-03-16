@@ -74,6 +74,7 @@ docker:
     - "/var/lib/asterisk/phoneprov"
     - "/var/spool/asterisk"
     - "/var/log/asterisk"
+    - "/usr/share/asterisk/moh/"
     - "/etc/asterisk"
 
 build:

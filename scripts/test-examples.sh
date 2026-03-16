@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Example usage of the Asterisk test build system
 # Demonstrates different testing modes and capabilities

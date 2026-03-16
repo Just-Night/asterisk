@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Enhanced version discovery script with correct priority: alpha < beta < rc < stable
 # Refactored from manobatai-matrix/latest-release.sh

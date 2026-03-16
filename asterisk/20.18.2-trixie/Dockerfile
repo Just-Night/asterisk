@@ -150,7 +150,7 @@ RUN asterisk -V || (echo "Error: Unable to run asterisk -V" && exit 1)
 # EXPOSE 10000-10099/udp
 
 # Define volumes for persistent data
-VOLUME ["/var/lib/asterisk/sounds", "/var/lib/asterisk/keys", "/var/lib/asterisk/phoneprov", "/var/spool/asterisk", "/var/log/asterisk", "/etc/asterisk"]
+VOLUME ["/var/lib/asterisk/sounds", "/var/lib/asterisk/keys", "/var/lib/asterisk/phoneprov", "/var/spool/asterisk", "/var/log/asterisk", "/usr/share/asterisk/moh/", "/etc/asterisk"]
 
 # Add health check
 HEALTHCHECK --interval=30s \
