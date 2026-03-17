@@ -8,14 +8,14 @@ services:
       - "5060:5060/udp" # SIP UDP
       - "5060:5060/tcp" # SIP TCP
       - "5061:5061/tcp" # SIP TLS
-      # - "10000-31000:10000-31000/udp" # RTP Media (ensure these ports are open in firewall)
+      - "10000-31000:10000-31000/udp" # RTP Media (ensure these ports are open in firewall)
     volumes:
-      - asterisk_logs:/var/log/asterisk
     #   # - ./asterisk/keys:/etc/asterisk/keys:ro
-      - ./config/modules.conf:/etc/asterisk/modules.conf:ro
-      - ./config/logger.conf:/etc/asterisk/logger.conf:ro
-      - ./config/ari.conf:/etc/asterisk/ari.conf:ro
-      - ./config/http.conf:/etc/asterisk/http.conf:ro
+      - asterisk_logs:/var/log/asterisk
+      # - ./config/modules.conf:/etc/asterisk/modules.conf:ro
+      # - ./config/logger.conf:/etc/asterisk/logger.conf:ro
+      # - ./config/ari.conf:/etc/asterisk/ari.conf:ro
+      # - ./config/http.conf:/etc/asterisk/http.conf:ro
   
       - /etc/pki/tls/certs/asterisk.pem:/etc/asterisk/keys/asterisk.pem:ro
       - /etc/pki/tls/private/asterisk.key:/etc/asterisk/keys/asterisk.key:ro
