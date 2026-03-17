@@ -12,7 +12,7 @@ services:
     volumes:
       - asterisk_logs:/var/log/asterisk
     #   # - ./asterisk/keys:/etc/asterisk/keys:ro
-    #   - ./config/modules.conf:/etc/asterisk/modules.conf:ro
+      - ./config/modules.conf:/etc/asterisk/modules.conf:ro
     #   - ./config/logger.conf:/etc/asterisk/logger.conf:ro
     #   - ./config/ari.conf:/etc/asterisk/ari.conf:ro
     #   - ./config/http.conf:/etc/asterisk/http.conf:ro
