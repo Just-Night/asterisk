@@ -20,4 +20,4 @@ services:
     #   - /etc/pki/tls/certs/asterisk.pem:/etc/asterisk/keys/asterisk.pem:ro
     #   - /etc/pki/tls/private/asterisk.key:/etc/asterisk/keys/asterisk.key:ro
     # env_file: .env
-    restart: unless-stopped
+    # restart: unless-stopped
