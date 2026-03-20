@@ -3,7 +3,7 @@ volumes:
 
 services:
   asterisk:
-    image: la-asterisk:latest
+    image: 841209751833.dkr.ecr.eu-central-1.amazonaws.com/la-asterisk:latest
     network_mode: host
     volumes:
       - asterisk_logs:/var/log/asterisk
