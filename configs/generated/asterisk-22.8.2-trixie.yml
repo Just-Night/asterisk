@@ -231,6 +231,11 @@ asterisk:
     - chan_dahdi
     - chan_misdn
     - app_festival
+    - res_config_ldap
+    - res_phoneprov
+    - res_adsi
+    - app_getcpeid
+    - app_adsiprog
     - chan_sip
   opus_codec:
     enabled: true
@@ -262,7 +267,6 @@ docker:
   - /var/lib/asterisk/phoneprov
   - /var/spool/asterisk
   - /var/log/asterisk
-  - /usr/share/asterisk/moh/
   - /etc/asterisk
 features:
   hep: true

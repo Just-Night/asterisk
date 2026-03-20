@@ -210,6 +210,11 @@ menuselect/menuselect --enable res_tonedetect menuselect.makeopts || warn "Modul
 menuselect/menuselect --disable chan_dahdi menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable chan_dahdi menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --disable chan_misdn menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable chan_misdn menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --disable app_festival menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable app_festival menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable res_config_ldap menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable res_config_ldap menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable res_phoneprov menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable res_phoneprov menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable res_adsi menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable res_adsi menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable app_getcpeid menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable app_getcpeid menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable app_adsiprog menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable app_adsiprog menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --disable chan_sip menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable chan_sip menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 
 

@@ -3,7 +3,7 @@ volumes:
 
 services:
   asterisk:
-    image: ghcr.io/andrius/asterisk:22.8.2_debian-trixie
+    image: la-asterisk:latest
     network_mode: host
     volumes:
       - asterisk_logs:/var/log/asterisk
