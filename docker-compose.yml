@@ -1,0 +1,27 @@
+volumes:
+  asterisk_logs:
+
+services:
+  asterisk:
+    image: ghcr.io/andrius/asterisk:22.8.2_debian-trixie
+    network_mode: host
+    volumes:
+      - asterisk_logs:/var/log/asterisk
+      - /etc/asterisk/modules.conf:/etc/asterisk/modules.conf:ro
+
+      - /etc/asterisk/asterisk.conf:/etc/asterisk/asterisk.conf:ro
+      - /etc/asterisk/hep.conf:/etc/asterisk/hep.conf:ro
+      - /etc/asterisk/logger.conf:/etc/asterisk/logger.conf:ro
+      - /etc/asterisk/ari.conf:/etc/asterisk/ari.conf:ro
+      - /etc/asterisk/http.conf:/etc/asterisk/http.conf:ro
+      - /etc/asterisk/extconfig.conf:/etc/asterisk/extconfig.conf:ro
+      - /etc/asterisk/musiconhold.conf:/etc/asterisk/musiconhold.conf:ro
+      - /etc/asterisk/pjsip.conf:/etc/asterisk/pjsip.conf:ro
+      - /etc/asterisk/res_odbc.conf:/etc/asterisk/res_odbc.conf:ro
+      - /etc/asterisk/rtp.conf:/etc/asterisk/rtp.conf:ro
+      - /etc/asterisk/sorcery.conf:/etc/asterisk/sorcery.conf:ro
+
+      - /etc/pki/tls/certs/asterisk.pem:/etc/pki/tls/certs/asterisk.pem:ro
+
+      - /usr/share/asterisk/moh/:/usr/share/asterisk/moh/:ro
+    # restart: unless-stopped
