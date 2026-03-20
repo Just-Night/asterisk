@@ -11,15 +11,21 @@ services:
     #   - "5061:5061/tcp" # SIP TLS
     #   - "10000-31000:10000-31000/udp" # RTP Media (ensure these ports are open in firewall)
     volumes:
-    #   # - ./asterisk/keys:/etc/asterisk/keys:ro
+    # - ./asterisk/keys:/etc/asterisk/keys:ro
+    # - ./config/modules.conf:/etc/asterisk/modules.conf:ro
       - asterisk_logs:/var/log/asterisk
       - ./config/asterisk.conf:/etc/asterisk/asterisk.conf:ro
       - ./config/hep.conf:/etc/asterisk/hep.conf:ro
-      # - ./config/modules.conf:/etc/asterisk/modules.conf:ro
       - ./config/logger.conf:/etc/asterisk/logger.conf:ro
-      # - ./config/ari.conf:/etc/asterisk/ari.conf:ro
-      # - ./config/http.conf:/etc/asterisk/http.conf:ro
-  
+      - ./config/ari.conf:/etc/asterisk/ari.conf:ro
+      - ./config/http.conf:/etc/asterisk/http.conf:ro
+      - ./config/extconfig.conf:/etc/asterisk/extconfig.conf:ro
+      - ./config/musiconhold.conf:/etc/asterisk/musiconhold.conf:ro
+      - ./config/pjsip.conf:/etc/asterisk/pjsip.conf:ro
+      - ./config/res_odbc.conf:/etc/asterisk/res_odbc.conf:ro
+      - ./config/rtp.conf:/etc/asterisk/rtp.conf:ro
+      - ./config/sorcery.conf:/etc/asterisk/sorcery.conf:ro
+
       - /etc/pki/tls/certs/asterisk.pem:/etc/asterisk/keys/asterisk.pem:ro
       - /etc/pki/tls/private/asterisk.key:/etc/asterisk/keys/asterisk.key:ro
     # env_file: .env
