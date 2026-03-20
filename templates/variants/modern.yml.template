@@ -239,6 +239,9 @@ asterisk:
       - app_festival
       - res_config_ldap
       - res_phoneprov
+      - res_adsi
+      - app_getcpeid
+      - app_adsiprog
 
   # Modern configure options with PJSIP bundled
   configure_options:
