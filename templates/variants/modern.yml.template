@@ -237,6 +237,8 @@ asterisk:
       - chan_dahdi
       - chan_misdn
       - app_festival
+      - res_config_ldap
+      - res_phoneprov
 
   # Modern configure options with PJSIP bundled
   configure_options:
