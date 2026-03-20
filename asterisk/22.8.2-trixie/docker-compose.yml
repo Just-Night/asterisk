@@ -27,5 +27,7 @@ services:
       - ./config/sorcery.conf:/etc/asterisk/sorcery.conf:ro
 
       - /etc/pki/tls/certs/asterisk.pem:/etc/pki/tls/certs/asterisk.pem:ro
+
+      - /usr/share/asterisk/moh/:/usr/share/asterisk/moh/
     # env_file: .env
     # restart: unless-stopped
