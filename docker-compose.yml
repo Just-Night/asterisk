@@ -12,9 +12,12 @@ services:
       - /etc/asterisk/:/etc/asterisk/:ro
 
       - /etc/odbc.ini:/etc/odbc.ini:ro
-      - /etc/odbcinst.ini:/etc/odbcinst.ini
+      - /etc/odbcinst.ini:/etc/odbcinst.ini:ro
+
+      - /var/spool/asterisk/recording/:/var/spool/asterisk/recording/
 
       - /etc/pki/tls/certs/asterisk.pem:/etc/pki/tls/certs/asterisk.pem:ro
+      - /etc/pki/tls/certs/ca-bundle.trust.crt:/etc/pki/tls/certs/ca-bundle.trust.crt:ro
 
       - /usr/share/asterisk/moh/:/usr/share/asterisk/moh/:ro
     # restart: unless-stopped
