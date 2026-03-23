@@ -238,6 +238,7 @@ asterisk:
       - chan_misdn
       - app_festival
       - res_config_ldap
+      - res_config_pgsql
       - res_phoneprov
       - res_adsi
       - app_getcpeid

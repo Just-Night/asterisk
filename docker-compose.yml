@@ -4,22 +4,15 @@ volumes:
 services:
   asterisk:
     image: 841209751833.dkr.ecr.eu-central-1.amazonaws.com/la-asterisk:latest
+    group_add:
+      - "117"   
     network_mode: host
     volumes:
       - asterisk_logs:/var/log/asterisk
-      - /etc/asterisk/modules.conf:/etc/asterisk/modules.conf:ro
+      - /etc/asterisk/:/etc/asterisk/:ro
 
-      - /etc/asterisk/asterisk.conf:/etc/asterisk/asterisk.conf:ro
-      - /etc/asterisk/hep.conf:/etc/asterisk/hep.conf:ro
-      - /etc/asterisk/logger.conf:/etc/asterisk/logger.conf:ro
-      - /etc/asterisk/ari.conf:/etc/asterisk/ari.conf:ro
-      - /etc/asterisk/http.conf:/etc/asterisk/http.conf:ro
-      - /etc/asterisk/extconfig.conf:/etc/asterisk/extconfig.conf:ro
-      - /etc/asterisk/musiconhold.conf:/etc/asterisk/musiconhold.conf:ro
-      - /etc/asterisk/pjsip.conf:/etc/asterisk/pjsip.conf:ro
-      - /etc/asterisk/res_odbc.conf:/etc/asterisk/res_odbc.conf:ro
-      - /etc/asterisk/rtp.conf:/etc/asterisk/rtp.conf:ro
-      - /etc/asterisk/sorcery.conf:/etc/asterisk/sorcery.conf:ro
+      - /etc/odbc.ini:/etc/odbc.ini:ro
+      - /etc/odbcinst.ini:/etc/odbcinst.ini
 
       - /etc/pki/tls/certs/asterisk.pem:/etc/pki/tls/certs/asterisk.pem:ro
 
