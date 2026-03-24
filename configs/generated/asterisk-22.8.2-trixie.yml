@@ -344,4 +344,5 @@ packages:
   - libncurses6
   - libpqxx-7.10
   - libicu76
+  - odbc-mariadb
 version: 22.8.2

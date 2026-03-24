@@ -87,28 +87,9 @@ RUN apt-get update \
         libresample1 libspandsp2 libspeex1 libspeexdsp1 libsqlite3-0 libvorbis0a \
         libxml2 libxslt1.1 odbcinst portaudio19-dev procps python3 unixodbc uuid \
         libcurl4t64 libssl3t64 libsrtp2-1 libncurses6 libpqxx-7.10 libicu76 \
+        odbc-mariadb \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-
-# Install wget/curl and MySQL ODBC Connector (tar.gz) for amd64 during image build
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends ca-certificates wget curl && \
-    if [ "${TARGETARCH}" = "amd64" ]; then \
-        cd /tmp && \
-        curl -fsSL 'https://dev.mysql.com/get/Downloads/Connector-ODBC/5.3/mysql-connector-odbc-5.3.7-linux-glibc2.5-x86-64bit.tar.gz' -o connector.tar.gz && \
-        tar -xzf connector.tar.gz && \
-        mkdir -p /usr/lib64/odbc && \
-        cp -v mysql-connector-odbc-5.3.7-linux-glibc2.5-x86-64bit/lib/* /usr/lib64/odbc/ && \
-        chmod 644 /usr/lib64/odbc/* && \
-        ldconfig || true && \
-        # If odbcinst.ini points to different Driver/Setup names, attempt to update to the files we installed
-        if [ -f /etc/odbcinst.ini ]; then \
-          sed -i "s|Driver = .*|Driver = /usr/lib64/odbc/libmyodbc5w.so|I" /etc/odbcinst.ini || true; \
-          sed -i "s|Setup = .*|Setup = /usr/lib64/odbc/libmyodbc5S.so|I" /etc/odbcinst.ini || true; \
-        fi; \
-    fi && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/connector.tar.gz
 
 # Create asterisk user and required directories
 RUN useradd --uid 1000 --system --user-group \

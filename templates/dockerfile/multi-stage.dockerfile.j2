@@ -150,26 +150,11 @@ RUN apt-get update && \
 {{ runtime_packages | join_packages(80) }} && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-
-# Install wget/curl and MySQL ODBC Connector (tar.gz) for amd64 during image build
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends ca-certificates wget curl && \
-    if [ "${TARGETARCH}" = "amd64" ]; then \
-        cd /tmp && \
-        curl -fsSL 'https://dev.mysql.com/get/Downloads/Connector-ODBC/5.3/mysql-connector-odbc-5.3.7-linux-glibc2.5-x86-64bit.tar.gz' -o connector.tar.gz && \
-        tar -xzf connector.tar.gz && \
-        mkdir -p /usr/lib64/odbc && \
-        cp -v mysql-connector-odbc-5.3.7-linux-glibc2.5-x86-64bit/lib/* /usr/lib64/odbc/ && \
-        chmod 644 /usr/lib64/odbc/* && \
-        ldconfig || true && \
-        # If odbcinst.ini points to different Driver/Setup names, attempt to update to the files we installed
-        if [ -f /etc/odbcinst.ini ]; then \
-          sed -i "s|Driver = .*|Driver = /usr/lib64/odbc/libmyodbc5w.so|I" /etc/odbcinst.ini || true; \
-          sed -i "s|Setup = .*|Setup = /usr/lib64/odbc/libmyodbc5S.so|I" /etc/odbcinst.ini || true; \
-        fi; \
-    fi && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/connector.tar.gz
+{% elif config.base.os == "alpine" -%}
+# Install runtime dependencies
+RUN apk add --no-cache \
+{{ runtime_packages | join_packages(80) }}
+{% endif %}
 
 # Create asterisk user and required directories
 RUN useradd --uid {{ user_config.uid | default(1000) }} --system --user-group \
@@ -187,26 +172,6 @@ RUN useradd --uid {{ user_config.uid | default(1000) }} --system --user-group \
     /var/lib/asterisk/phoneprov \
     /var/lib/asterisk/sounds \
     /var/lib/asterisk/docs
-{% elif config.base.os == "alpine" -%}
-# Install runtime dependencies
-RUN apk add --no-cache \
-{{ runtime_packages | join_packages(80) }}
-
-# Create asterisk user and required directories
-RUN adduser -D -u {{ user_config.uid | default(1000) }} {{ user_config.name | default("asterisk") }} && \
-    mkdir -p \
-    /var/run/asterisk \
-    /var/log/asterisk \
-    /var/spool/asterisk/monitor \
-    /var/spool/asterisk/outgoing \
-    /var/spool/asterisk/tmp \
-    /var/spool/asterisk/voicemail \
-    /var/spool/asterisk/fax \
-    /var/lib/asterisk/keys \
-    /var/lib/asterisk/phoneprov \
-    /var/lib/asterisk/sounds \
-    /var/lib/asterisk/docs
-{% endif %}
 
 # ==============================================================================
 # STAGE 3: Final Production Image

@@ -19,3 +19,4 @@ package_overrides:
     - libncurses6
     - libpqxx-7.10
     - libicu76
+    - odbc-mariadb
