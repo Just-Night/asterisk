@@ -125,6 +125,16 @@ log "Installing sample configurations..."
 make samples
 {% endif %}
 
+{% if config.asterisk.menuselect.exclude is defined and config.asterisk.menuselect.exclude %}
+if [ -f /etc/asterisk/modules.conf ]; then
+{% for module in config.asterisk.menuselect.exclude %}
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*{{ module }}\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => {{ module }}.so\n' >> /etc/asterisk/modules.conf
+    fi
+{% endfor %}
+fi
+{% endif %}
+
 {% set opus = config.asterisk.opus_codec | default({}) %}
 {% if opus.enabled | default(false) %}
 # Download and install Digium Opus codec binary (x86-64 only)

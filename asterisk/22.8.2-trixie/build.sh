@@ -54,7 +54,6 @@ menuselect/menuselect --enable-category MENUSELECT_EXTRA_SOUNDS menuselect.makeo
 menuselect/menuselect --enable TEST_FRAMEWORK menuselect.makeopts
 
 # Enable core applications
-menuselect/menuselect --enable app_voicemail menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable app_voicemail menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable app_queue menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable app_queue menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable app_confbridge menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable app_confbridge menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable app_directory menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable app_directory menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
@@ -100,8 +99,6 @@ menuselect/menuselect --enable app_waituntil menuselect.makeopts || warn "Module
 menuselect/menuselect --enable app_while menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable app_while menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 
 # Enable CDR and CEL modules
-menuselect/menuselect --enable cdr_adaptive_odbc menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable cdr_adaptive_odbc menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
-menuselect/menuselect --enable cdr_odbc menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable cdr_odbc menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 
 # Enable channel drivers
 menuselect/menuselect --enable chan_pjsip menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable chan_pjsip menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
@@ -111,7 +108,6 @@ menuselect/menuselect --enable chan_bridge_media menuselect.makeopts || warn "Mo
 menuselect/menuselect --enable chan_rtp menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable chan_rtp menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 
 # Enable resource modules
-menuselect/menuselect --enable res_aeap menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_aeap menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_agi menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_agi menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_ari menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_ari menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_ari_applications menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_ari_applications menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
@@ -125,7 +121,6 @@ menuselect/menuselect --enable res_ari_model menuselect.makeopts || warn "Module
 menuselect/menuselect --enable res_ari_playbacks menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_ari_playbacks menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_ari_recordings menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_ari_recordings menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_ari_sounds menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_ari_sounds menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
-menuselect/menuselect --enable res_clialiases menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_clialiases menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_clioriginate menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_clioriginate menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_config_odbc menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_config_odbc menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_convert menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_convert menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
@@ -133,7 +128,6 @@ menuselect/menuselect --enable res_crypto menuselect.makeopts || warn "Module no
 menuselect/menuselect --enable res_hep menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_hep menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_hep_pjsip menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_hep_pjsip menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_hep_rtcp menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_hep_rtcp menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
-menuselect/menuselect --enable res_http_media_cache menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_http_media_cache menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_http_post menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_http_post menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_http_websocket menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_http_websocket menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_limit menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_limit menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
@@ -141,7 +135,6 @@ menuselect/menuselect --enable res_manager_devicestate menuselect.makeopts || wa
 menuselect/menuselect --enable res_manager_presencestate menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_manager_presencestate menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_musiconhold menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_musiconhold menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_mutestream menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_mutestream menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
-menuselect/menuselect --enable res_mwi_devstate menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_mwi_devstate menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_odbc menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_odbc menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_odbc_transaction menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_odbc_transaction menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_pjproject menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_pjproject menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
@@ -149,7 +142,6 @@ menuselect/menuselect --enable res_pjsip menuselect.makeopts || warn "Module not
 menuselect/menuselect --enable res_pjsip_acl menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_pjsip_acl menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_pjsip_authenticator_digest menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_pjsip_authenticator_digest menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_pjsip_caller_id menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_pjsip_caller_id menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
-menuselect/menuselect --enable res_pjsip_config_wizard menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_pjsip_config_wizard menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_pjsip_dialog_info_body_generator menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_pjsip_dialog_info_body_generator menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_pjsip_diversion menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_pjsip_diversion menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_pjsip_dlg_options menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_pjsip_dlg_options menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
@@ -162,7 +154,6 @@ menuselect/menuselect --enable res_pjsip_exten_state menuselect.makeopts || warn
 menuselect/menuselect --enable res_pjsip_header_funcs menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_pjsip_header_funcs menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_pjsip_history menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_pjsip_history menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_pjsip_logger menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_pjsip_logger menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
-menuselect/menuselect --enable res_pjsip_mwi_body_generator menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_pjsip_mwi_body_generator menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_pjsip_nat menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_pjsip_nat menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_pjsip_outbound_authenticator_digest menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_pjsip_outbound_authenticator_digest menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --enable res_pjsip_outbound_publish menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --enable res_pjsip_outbound_publish menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
@@ -209,13 +200,39 @@ menuselect/menuselect --enable res_tonedetect menuselect.makeopts || warn "Modul
 # Disable unwanted modules
 menuselect/menuselect --disable chan_dahdi menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable chan_dahdi menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --disable chan_misdn menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable chan_misdn menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable chan_websocket menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable chan_websocket menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable chan_unistim menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable chan_unistim menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --disable app_festival menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable app_festival menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable app_amd menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable app_amd menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --disable res_config_ldap menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable res_config_ldap menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --disable res_config_pgsql menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable res_config_pgsql menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable res_websocket_client menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable res_websocket_client menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --disable res_phoneprov menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable res_phoneprov menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --disable res_adsi menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable res_adsi menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --disable app_getcpeid menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable app_getcpeid menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --disable app_adsiprog menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable app_adsiprog menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable cdr_odbc menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable cdr_odbc menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable cdr_manager menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable cdr_manager menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable cel_pgsql menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable cel_pgsql menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable cdr_adaptive_odbc menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable cdr_adaptive_odbc menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable cdr_custom menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable cdr_custom menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable cdr_pgsql menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable cdr_pgsql menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable cdr_csv menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable cdr_csv menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable pbx_dundi menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable pbx_dundi menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable app_voicemail menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable app_voicemail menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable res_pjsip_mwi_body_generator menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable res_pjsip_mwi_body_generator menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable res_mwi_devstate menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable res_mwi_devstate menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable res_pjsip_config_wizard menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable res_pjsip_config_wizard menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable res_aeap menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable res_aeap menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable func_odbc menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable func_odbc menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable res_clialiases menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable res_clialiases menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable res_http_media_cache menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable res_http_media_cache menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable format_ogg_vorbis menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable format_ogg_vorbis menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable res_speech_aeap menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable res_speech_aeap menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable cel_sqlite3_custom menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable cel_sqlite3_custom menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable cdr_sqlite3_custom menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable cdr_sqlite3_custom menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable app_alarmreceiver menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable app_alarmreceiver menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
+menuselect/menuselect --disable app_page menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable app_page menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 menuselect/menuselect --disable chan_sip menuselect.makeopts || warn "Module not found: $(echo 'menuselect/menuselect --disable chan_sip menuselect.makeopts' | grep -o '[a-z_]*' | tail -1)"
 
 
@@ -229,6 +246,117 @@ log "Installing Asterisk..."
 TMPDIR=${TMPDIR} make install
 log "Installing sample configurations..."
 TMPDIR=${TMPDIR} make samples
+
+if [ -f /etc/asterisk/modules.conf ]; then
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*chan_dahdi\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => chan_dahdi.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*chan_misdn\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => chan_misdn.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*chan_websocket\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => chan_websocket.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*chan_unistim\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => chan_unistim.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*app_festival\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => app_festival.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*app_amd\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => app_amd.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*res_config_ldap\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => res_config_ldap.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*res_config_pgsql\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => res_config_pgsql.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*res_websocket_client\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => res_websocket_client.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*res_phoneprov\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => res_phoneprov.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*res_adsi\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => res_adsi.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*app_getcpeid\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => app_getcpeid.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*app_adsiprog\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => app_adsiprog.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*cdr_odbc\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => cdr_odbc.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*cdr_manager\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => cdr_manager.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*cel_pgsql\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => cel_pgsql.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*cdr_adaptive_odbc\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => cdr_adaptive_odbc.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*cdr_custom\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => cdr_custom.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*cdr_pgsql\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => cdr_pgsql.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*cdr_csv\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => cdr_csv.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*pbx_dundi\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => pbx_dundi.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*app_voicemail\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => app_voicemail.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*res_pjsip_mwi_body_generator\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => res_pjsip_mwi_body_generator.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*res_mwi_devstate\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => res_mwi_devstate.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*res_pjsip_config_wizard\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => res_pjsip_config_wizard.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*res_aeap\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => res_aeap.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*func_odbc\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => func_odbc.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*res_clialiases\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => res_clialiases.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*res_http_media_cache\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => res_http_media_cache.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*format_ogg_vorbis\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => format_ogg_vorbis.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*res_speech_aeap\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => res_speech_aeap.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*cel_sqlite3_custom\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => cel_sqlite3_custom.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*cdr_sqlite3_custom\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => cdr_sqlite3_custom.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*app_alarmreceiver\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => app_alarmreceiver.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*app_page\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => app_page.so\n' >> /etc/asterisk/modules.conf
+    fi
+    if ! grep -Eq '^[[:space:]]*noload[[:space:]]*=>[[:space:]]*chan_sip\.so([[:space:]]*;.*)?$' /etc/asterisk/modules.conf; then
+        printf 'noload => chan_sip.so\n' >> /etc/asterisk/modules.conf
+    fi
+fi
 
 # Download and install Digium Opus codec binary (x86-64 only)
 ARCH=$(dpkg --print-architecture 2>/dev/null || echo "unknown")
