@@ -19,6 +19,7 @@ asterisk:
       - chan_bridge_media
       - chan_rtp
     apps:
+      - app_voicemail
       - app_queue
       - app_confbridge
       - app_directory
@@ -70,6 +71,8 @@ asterisk:
       - bridge_native_rtp
       - bridge_simple
       - bridge_softmix
+      - cdr_adaptive_odbc
+      - cdr_odbc
       - codec_a_mu
       - codec_alaw
       - codec_gsm
@@ -108,6 +111,7 @@ asterisk:
       - func_math
       - func_md5
       - func_module
+      - func_odbc
       - func_periodic_hook
       - func_pitchshift
       - func_pjsip_aor
@@ -135,6 +139,7 @@ asterisk:
       - pbx_loopback
       - pbx_realtime
       - pbx_spool
+      - res_aeap
       - res_agi
       - res_ari
       - res_ari_applications
@@ -148,6 +153,7 @@ asterisk:
       - res_ari_playbacks
       - res_ari_recordings
       - res_ari_sounds
+      - res_clialiases
       - res_clioriginate
       - res_config_odbc
       - res_convert
@@ -155,6 +161,7 @@ asterisk:
       - res_hep
       - res_hep_pjsip
       - res_hep_rtcp
+      - res_http_media_cache
       - res_http_post
       - res_http_websocket
       - res_limit
@@ -162,6 +169,7 @@ asterisk:
       - res_manager_presencestate
       - res_musiconhold
       - res_mutestream
+      - res_mwi_devstate
       - res_odbc
       - res_odbc_transaction
       - res_pjproject
@@ -169,6 +177,7 @@ asterisk:
       - res_pjsip_acl
       - res_pjsip_authenticator_digest
       - res_pjsip_caller_id
+      - res_pjsip_config_wizard
       - res_pjsip_dialog_info_body_generator
       - res_pjsip_diversion
       - res_pjsip_dlg_options
@@ -181,6 +190,7 @@ asterisk:
       - res_pjsip_header_funcs
       - res_pjsip_history
       - res_pjsip_logger
+      - res_pjsip_mwi_body_generator
       - res_pjsip_nat
       - res_pjsip_outbound_authenticator_digest
       - res_pjsip_outbound_publish
@@ -226,39 +236,13 @@ asterisk:
     exclude:
       - chan_dahdi
       - chan_misdn
-      - chan_websocket
-      - chan_unistim
       - app_festival
-      - app_amd
       - res_config_ldap
       - res_config_pgsql
-      - res_websocket_client
       - res_phoneprov
       - res_adsi
       - app_getcpeid
       - app_adsiprog
-      - cdr_odbc
-      - cdr_manager
-      - cel_pgsql
-      - cdr_adaptive_odbc
-      - cdr_custom
-      - cdr_pgsql
-      - cdr_csv
-      - pbx_dundi
-      - app_voicemail
-      - res_pjsip_mwi_body_generator
-      - res_mwi_devstate
-      - res_pjsip_config_wizard
-      - res_aeap
-      - func_odbc
-      - res_clialiases
-      - res_http_media_cache
-      - format_ogg_vorbis
-      - res_speech_aeap
-      - cel_sqlite3_custom
-      - cdr_sqlite3_custom
-      - app_alarmreceiver
-      - app_page
 
   # Modern configure options with PJSIP bundled
   configure_options:
